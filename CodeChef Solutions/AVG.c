@@ -27,7 +27,7 @@ int main()
 
             x = expression / k;
 
-            if (x <= 0)
+            if (x <=0)
             {
                 printf("-1\n");
             }
@@ -40,4 +40,4 @@ int main()
     }
 
     return 0;
-} // all myself except question understanding.
+}
