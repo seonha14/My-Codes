@@ -136,11 +136,11 @@ int main()
     Array set2 = {{3, 7, 12, 14, 32, 67, 90}, 10, 7};
 
     Array *ptr;
-    ptr = UnionSorted(set1, set2);
-    Display(*ptr);
+    // ptr = UnionSorted(set1, set2);
+    // Display(*ptr);
 
-    ptr = Intersection(set1, set2);
-    Display(*ptr);
+    // ptr = Intersection(set1, set2);
+    // Display(*ptr);
 
     ptr = Difference(set2, set1);
     Display(*ptr);
