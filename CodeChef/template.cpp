@@ -6,6 +6,6 @@ int main()
     cin >> t;
     while (t--)
     {
-        }
+    }
     return 0;
 }
