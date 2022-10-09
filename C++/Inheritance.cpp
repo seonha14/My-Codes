@@ -96,7 +96,7 @@ public:
 
 Cuboid::Cuboid(int l = 0, int b = 0, int h = 0)
 {
-    // height = h; This is also valid for hight.
+    // height = h; This is also valid for height.
     setLength(l); // Using Mutator because it cannot directly acces private members.
     setBreadth(b);
     setHeight(h);
