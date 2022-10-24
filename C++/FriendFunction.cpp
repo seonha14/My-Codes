@@ -35,8 +35,12 @@ void Complex::display()
     cout << real << "+" << imaginary << "i" << endl;
 }
 
-// Friend fn is written outside the class because it does not belongs
-//  to any specific class but it is a friend so it can use class members.
+// Friend fn is written outside the class
+// A friend function is a normal function that has access to private members of the class
+
+// Difference between class's function and friend function is
+// Members are accessible directly in class functions like real=5
+// whereas friend function use objects to access members like a.real=5 (where a is an object)
 Complex operator+(Complex C1, Complex C2)
 {
     Complex t;
@@ -44,3 +48,4 @@ Complex operator+(Complex C1, Complex C2)
     t.imaginary = C1.imaginary + C2.imaginary;
     return t;
 }
+// Even Derived class and their objects cannot access private members but objects of Friend Functions and Classes can access

@@ -2,7 +2,7 @@
 
 int n = 1;
 
-int toh(int disks, int t1, int t2, int t3)
+void toh(int disks, int t1, int t2, int t3)
 {
     if (disks > 0)
     {
@@ -20,7 +20,7 @@ int toh(int disks, int t1, int t2, int t3)
 
 int main()
 {
-    toh(2, 1, 2, 3);
+    toh(3, 1, 2, 3);
 
     return 0;
 }
