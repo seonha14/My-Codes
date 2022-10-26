@@ -29,10 +29,12 @@ public:
     void InsertSort(int element);
     void Reverse();
     void Sort();
+    ~Array(); // Destructor
 };
 int main()
 {
-    cout << "\n\n\n\n\t\t\t\tMenu Driven Array Program\t\t\t\t~By github.com/AzeemIdrisi\n\n"
+    system("cls"); // For clearing the screen on Windows ; Use system("clear") on Linux
+    cout << "\n\n\t\t\t\tMenu Driven Array Program\t\t\t\t~By github.com/AzeemIdrisi\n\n"
          << endl;
 
     int size, length;
@@ -82,14 +84,9 @@ int main()
         cout << "0.  Exit" << endl;
 
         cin >> selection;
-        system("cls");
+        system("cls"); // For clearing the screen on Windows ; Use system("clear") on Linux
         cout << endl;
 
-        if (selection == 0)
-        {
-
-            cout << "GOOD BYE !!!" << endl;
-        }
         switch (selection)
         {
 
@@ -482,4 +479,11 @@ void Array::Sort()
     }
 
     cout << "The array is Sorted" << endl;
+}
+
+Array::~Array() // Destructor is called at the end of the program
+{
+    delete A;
+    cout << "Array deleted" << endl;
+    cout << "GOOD BYE !!!" << endl;
 }
