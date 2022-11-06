@@ -1,3 +1,5 @@
+// Sequence Must Be Sorted
+
 #include <iostream>
 using namespace std;
 
@@ -8,7 +10,7 @@ void MultipleMissing(int arr[], int size, int lowest)
     {
         if (arr[i] - i != diff)
         {
-            while (diff < arr[i] - i)
+            while (diff < (arr[i] - i))
             {
                 cout << i + diff << endl;
                 diff++;
@@ -41,6 +43,22 @@ int NaturalTest(int arr[], int size, int n) // Where N is the last element of th
 
     return s - sum;
 }
+
+void Hashing(int arr[], int n, int low, int high)
+{
+    int hashtable[high] = {0};
+    for (int i = 0; i < n; i++)
+    {
+        hashtable[arr[i]]++;
+    }
+    for (int i = low; i <= high; i++)
+    {
+        if (hashtable[i] == 0)
+        {
+            cout << i << " is missing" << endl;
+        }
+    }
+}
 int main()
 {
     int A[] = {1, 2, 3, 4, 5, 6, 7, 9, 10}; // When array is Natural Numbers
@@ -63,8 +81,11 @@ int main()
 
     int c[] = {5, 6, 7, 9, 10, 11, 12, 15, 17};
     size = 9;
-    cout << "Multiple Missing test for c: " << endl;
+    cout << "Multiple Missing test for C: " << endl;
     MultipleMissing(c, size, c[0]);
+
+    cout << "\nUsing Hashing \n\n";
+    Hashing(c, size, 5, 17);
 }
 
 /// To be continued from video
