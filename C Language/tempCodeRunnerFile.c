@@ -1,4 +1,4 @@
-void delete ()
+void dequeue()
 {
     if ((F == -1) && (R == -1))
         printf("Underflow\n");

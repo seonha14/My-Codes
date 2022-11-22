@@ -3,29 +3,29 @@
 
 int Q[N];
 int F = -1, R = -1;
-void insert(int x);
-void delete ();
+void inqueue(int x);
+void dequeue();
 void display();
 int main()
 {
-    insert(5);
+    inqueue(5);
     display();
-    insert(6);
+    inqueue(6);
     display();
-    insert(7);
+    inqueue(7);
     display();
-    delete ();
-    insert(8);
+    dequeue();
+    inqueue(8);
     display();
-    insert(9);
+    inqueue(9);
     display();
-    insert(10);
+    inqueue(10);
     display();
-    insert(11);
+    inqueue(11);
     display();
 }
 
-void insert(int x)
+void inqueue(int x)
 {
     R = (R + 1) % N;
     if (F == R)
@@ -39,7 +39,7 @@ void insert(int x)
         Q[R] = x;
 }
 
-void delete ()
+void dequeue()
 {
     if ((F == -1) && (R == -1))
         printf("Underflow\n");

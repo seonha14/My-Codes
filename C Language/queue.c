@@ -5,7 +5,7 @@ int Q[N];
 int F = -1;
 int R = -1;
 
-void insert(int value)
+void inqueue(int value)
 {
     if ((F == -1) && (R == -1))
     {
@@ -19,7 +19,7 @@ void insert(int value)
     }
 }
 
-void delete ()
+void dequeue()
 {
     int x = -1;
     if (R == -1)
@@ -63,18 +63,16 @@ void isEmpty()
 int main()
 {
     isEmpty();
-    insert(5);
-    insert(3);
-    insert(2);
-    delete ();
+    inqueue(5);
+    inqueue(3);
+    inqueue(2);
+    dequeue();
     isfull();
     display();
-    delete ();
+    dequeue();
     display();
-    insert(6);
+    inqueue(6);
     display();
-    insert(8);
-    display();
-    insert(9);
+    inqueue(8);
     display();
 }

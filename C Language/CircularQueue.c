@@ -1,16 +1,51 @@
+// PRACTICAL 6 - Implementation of Circular Queue using Array.
+// Mohd Azeem | CSE 2B | 2100300100112
+
 #include <stdio.h>
 #define N 5
 
 int F = -1, R = -1;
 int Q[N];
 
+void inqueue(int);
+void dequeue();
+void display();
+
+void main()
+{
+    inqueue(5);
+    display();
+    inqueue(6);
+    display();
+    inqueue(7);
+    display();
+    dequeue();
+    display();
+    inqueue(8);
+    display();
+    inqueue(9);
+    display();
+    inqueue(10);
+    display();
+    dequeue();
+    display();
+    inqueue(135);
+    display();
+    inqueue(10);
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+    dequeue();
+}
 void display()
 {
     if ((F == -1) && (R == -1))
     {
         printf("Empty queue\n");
     }
-    if (F <= R)
+    else if (F <= R)
     {
         for (int i = F; i <= R; i++)
         {
@@ -31,9 +66,13 @@ void display()
     }
     printf("\n");
 }
-void insert(int element)
+void inqueue(int element)
 {
-    if ((F == -1) && (R == -1))
+    if (F == ((R + 1) % N))
+    {
+        printf("Overflow\n");
+    }
+    else if ((F == -1) && (R == -1))
     {
         F = F + 1;
         R = (R + 1) % N;
@@ -46,7 +85,7 @@ void insert(int element)
     }
 }
 
-void delete ()
+void dequeue()
 {
     if ((F == -1) && (R == -1))
     {
@@ -54,7 +93,7 @@ void delete ()
     }
     else
     {
-        printf("Deleted - %d\n", Q[F]);
+        printf("Deleted : %d\n", Q[F]);
         if (F == R)
         {
             F = -1;
@@ -64,40 +103,25 @@ void delete ()
             F = (F + 1) % N;
     }
 }
-int main()
-{
-    // insert(5);
-    // insert(4);
-    // insert(6);
-    // insert(7);
-    // insert(9);
-    // display();
-    // delete ();
-    // display();
-    // delete ();
-    // display();
-    // delete ();
-    // display();
-    // insert(12);
-    // display();
-    // insert(1);
-    // display();
-    // insert(7);
-    // display();
 
-    insert(5);
-    display();
-    insert(6);
-    display();
-    insert(7);
-    display();
-    delete ();
-    insert(8);
-    display();
-    insert(9);
-    display();
-    insert(10);
-    display();
-    insert(11);
-    display();
-}
+/*
+Output:
+5
+5 6
+5 6 7
+Deleted : 5
+6 7
+6 7 8
+6 7 8 9
+6 7 8 9 10
+Deleted : 6
+7 8 9 10
+7 8 9 10 135
+Overflow
+Deleted : 7
+Deleted : 8
+Deleted : 9
+Deleted : 10
+Deleted : 135
+Underflow
+*/
