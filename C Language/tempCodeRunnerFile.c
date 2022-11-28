@@ -1,15 +1,9 @@
-void dequeue()
-{
-    if ((F == -1) && (R == -1))
-        printf("Underflow\n");
-    else if (F == R)
-    {
-        printf("Deleted = %d \n", Q[F]);
-        F = R = 0;
-    }
-    else
-    {
-        printf("Deleted = %d \n", Q[F]);
-        F = (1 + F) % N;
-    }
-}
+Empty
+Stack Underflow
+Stack Overflow
+Stack elements : 9 8 7 6 5
+Full
+Popped : 9
+Popped : 8
+Stack elements : 7 6 5
+Not Full

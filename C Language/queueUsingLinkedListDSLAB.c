@@ -1,3 +1,5 @@
+// PRACTICAL 8: Implementation of Queue using Linked List.
+// Mohd Azeem | CSE 2B | 2100300100112
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,85 +7,34 @@ struct node
 {
     int info;
     struct node *ptr;
-} * front, *rear, *temp, *front1;
+} *front = NULL, *rear = NULL, *temp, *front1;
 
-int frontelement();
+void frontelement();
 void enq(int data);
 void deq();
 void empty();
 void display();
-void create();
 void queuesize();
 int count = 0;
 
 void main()
 {
-    int no, ch, e;
-    printf("1. Enque \n");
-    printf("2. Deque \n");
-    printf("3. Front element \n");
-    printf("4. Empty \n");
-    printf("5. Exit \n");
-    printf("6. Display \n");
-    printf("7. Queue Size \n");
-
-    create();
-    while (1)
-    {
-        printf("Enter choice \n");
-        scanf("%d", &ch);
-        switch (ch)
-        {
-        case 1:
-            printf("Enter data \n");
-            scanf("%d", &no);
-            enq(no);
-            break;
-
-        case 2:
-            deq();
-            break;
-        case 3:
-            e = frontelement();
-            if (e != 0)
-            {
-                printf("Front element - %d\n", e);
-            }
-            else
-
-            {
-                printf("empty\n");
-            }
-            break;
-        case 4:
-            empty();
-            break;
-        case 5:
-            exit(0);
-        case 6:
-            display();
-            break;
-        case 7:
-            queuesize();
-            break;
-
-        default:
-            printf("Wrong choice \n");
-            break;
-        }
-    }
-}
-
-void create()
-{
-    front = rear = NULL;
+    enq(1);
+    enq(2);
+    enq(3);
+    enq(4);
+    display();
+    deq();
+    frontelement();
+    display();
+    queuesize();
+    empty();
 }
 
 void queuesize()
 {
     printf("Size = %d\n", count);
 }
-
 void enq(int data)
 {
     if (rear == NULL)
@@ -122,7 +73,6 @@ void display()
     }
     printf("\n");
 }
-
 void deq()
 {
     front1 = front;
@@ -150,13 +100,13 @@ void deq()
         count--;
     }
 }
-
-int frontelement()
+void frontelement()
 {
+    int e;
     if ((front != NULL) && (rear != NULL))
-        return (front->info);
+        printf("Front element - %d\n", (front->info));
     else
-        return 0;
+        printf("empty\n");
 }
 
 void empty()
@@ -166,3 +116,13 @@ void empty()
     else
         printf("Not Empty\n");
 }
+
+/*
+Output
+1 2 3 4
+1
+Front element - 2
+2 3 4
+Size = 3
+Not Empty
+*/
