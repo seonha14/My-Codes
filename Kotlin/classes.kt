@@ -14,6 +14,7 @@ fun main() {
     println(Az.hobby)
     println(Az.age)
     Az.showHobby()
+
 }
 
 //class with default constructor Alpha Corp and init (initializer) that executes when object is created
