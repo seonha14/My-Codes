@@ -81,4 +81,5 @@ int main()
     }
     a.Display();
     cout << a; // Overloaded for displaying object of type diagonal;
+    return 0;
 }
