@@ -17,3 +17,9 @@ sum = 0
 for i in range(0, 101, 2):
     sum += i
 print(f"\n\nSum : {sum}\n")
+
+# While loop
+a = 5
+while a > 0:
+    print(a)
+    a = a-1
