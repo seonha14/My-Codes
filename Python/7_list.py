@@ -28,3 +28,11 @@ print("\n Length of List 1 is : ", len(list1))
 # Nested list, Like multidimensional array
 nested = [new_list, list1]
 print("\nNested list : ", nested)
+
+# wiping a list
+nested = []
+print("\nNested list : ", nested)
+
+# Assigning a list
+nested = new_list
+print("\nNested list : ", nested)
