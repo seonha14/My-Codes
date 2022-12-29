@@ -1,2 +1,7 @@
-a = 1.276389272
-print(round(a, 2))
+def fun():
+    print("HEllo")
+    return 0
+
+
+a = fun()
+print(a)
