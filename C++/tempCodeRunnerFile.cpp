@@ -1,7 +1,5 @@
-6
-2 1039 3749 8473
-4
-3 1456 3836 283
-3 729 3749 272
-2 4839 283 273
-4
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int removeDuplicates(vector<int> &nums)
