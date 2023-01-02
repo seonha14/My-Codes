@@ -20,3 +20,8 @@ if 3 < 5:
 
 # Accessing new variable outside the if
 print("New variable in if : ", new_varible)
+
+HELLO = 12
+
+HELLO = 3
+print(HELLO)

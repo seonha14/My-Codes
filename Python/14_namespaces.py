@@ -42,3 +42,9 @@ def increase_by1():
 
 sample_Var = increase_by1()
 print(sample_Var)
+
+# Constants
+# Use all uppercase and do not modify it
+
+PI = 3.14
+URL = 'https://something.com'
