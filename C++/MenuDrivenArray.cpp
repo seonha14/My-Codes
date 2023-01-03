@@ -33,7 +33,7 @@ public:
 };
 int main()
 {
-    system("cls"); // For clearing the screen on Windows ; Use system("clear") on Linux
+    system("clear"); // For clearing the screen on Windows system("cls") ; Use system("clear") on Linux
     cout << "\n\n\t\t\t\tMenu Driven Array Program\t\t\t\t~By github.com/AzeemIdrisi\n\n"
          << endl;
 
@@ -84,12 +84,14 @@ int main()
         cout << "0.  Exit" << endl;
 
         cin >> selection;
-        system("cls"); // For clearing the screen on Windows ; Use system("clear") on Linux
+        system("clear"); // For clearing the screen on Windows ; Use system("clear") on Linux
         cout << endl;
 
         switch (selection)
         {
-
+        case 0:
+            selection = 0;
+            break;
         case 1:
             a1.Display();
             break;
@@ -172,6 +174,7 @@ int main()
             break;
 
         default:
+            cout << "Invalid Selection" << endl;
             break;
         }
     } while (selection != 0);
@@ -485,5 +488,5 @@ Array::~Array() // Destructor is called at the end of the program
 {
     delete A;
     cout << "Array deleted" << endl;
-    cout << "GOOD BYE !!!" << endl;
+    cout << "Exiting..." << endl;
 }
