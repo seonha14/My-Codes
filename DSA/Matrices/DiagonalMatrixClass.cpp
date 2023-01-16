@@ -76,7 +76,7 @@ int main()
     {
         for (size_t j = 1; j <= n; j++)
         {
-            a.Set(i, j, i + j);
+            a.Set(i, j, 1);
         }
     }
     a.Display();

@@ -33,7 +33,14 @@ public:
 };
 int main()
 {
-    system("clear"); // For clearing the screen on Windows system("cls") ; Use system("clear") on Linux
+    // For OS Specific tasks checking OS
+    char *clear;
+#if defined(__linux__) || (__APPLE__)
+    clear = "clear";
+#else
+    clear = "cls"
+#endif
+    system(clear);
     cout << "\n\n\t\t\t\tMenu Driven Array Program\t\t\t\t~By github.com/AzeemIdrisi\n\n"
          << endl;
 
@@ -84,7 +91,7 @@ int main()
         cout << "0.  Exit" << endl;
 
         cin >> selection;
-        system("clear"); // For clearing the screen on Windows ; Use system("clear") on Linux
+        system(clear);
         cout << endl;
 
         switch (selection)
